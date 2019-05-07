@@ -7,7 +7,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jeyll](https://je
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-[Project](https://github.com/amanbagla/Aman-Bagla/blob/master/Project.html)
+<a href="Project.html">Project</a>
 ```markdown
 Syntax highlighted code block
 
