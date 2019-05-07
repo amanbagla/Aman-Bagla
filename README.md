@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ## R Markdown
 
 
-```{r}
+
 library(ggplot2)
 library('maps')
 library(countrycode)
@@ -116,7 +116,7 @@ ggplot(data=Final_data_updated) + geom_polygon(aes(x=long, y=lat, group = group,
         axis.text.y=element_blank(),
         axis.ticks.y=element_blank())
 
-```
+
 
 
 ```{r}
