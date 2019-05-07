@@ -1,0 +1,56 @@
+---
+title: "Untitled"
+author: "Aman Bagla"
+date: "7 May 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+library(ggplot2)
+library('maps')
+library(countrycode)
+library(corrplot)
+library(dplyr)
+library(plyr)
+library(ggvis)
+library(tidyverse)
+library(tidyr)
+library(shiny)
+library(glmnet)
+
+world <- map_data('world')
+world$codes <- countrycode(world$region, 'country.name', 'iso3c')
+world$sq <- seq(1:99338)
+
+# Loading Age data
+setwd("C:/Users/amanb/Desktop/STAT 598")
+age <- read.csv("age_data.csv", stringsAsFactors = FALSE)
+names(age)[1] <- "Country"
+
+age$codes <- countrycode(age$Country, 'country.name', 'iso3c')
+age <- age[-which(is.na(age$codes)),]
+age <- age[,-c(2,3)]
+
+# Country wise Media age trend
+age %>% group_by(Country) %>% gather(X1950:X2015, key = "Year", value= 'Median_age') %>%
+  ggvis(x=~ Year, y=~ Median_age, stroke =~ Country) %>% 
+  layer_lines(stroke.hover:='black', strokeWidth:= 0.2, strokeWidth.hover :=2) %>% 
+  layer_points(size:=0) %>%
+  filter(Country %in% eval(input_select(choices = unique(as.character(age$Country)),
+                                      multiple=TRUE, label='Country list'))) %>%
+  layer_lines(stroke =~ Country, strokeWidth:= 2) %>% 
+  layer_points(size:= 30, size.hover := 100, stroke.hover = 'black') %>%
+  add_tooltip(function(x)  {paste(x$Country,":", x$Median_age)},'hover')  %>% 
+  hide_legend('stroke')
+
+```
