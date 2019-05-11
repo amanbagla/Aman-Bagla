@@ -33,9 +33,9 @@ _Jan 2019-May 2019_
 - Build a model to predict sale price of house for Ames city and Iowa using 80 qualitative and quantitative predictors such as house location, facilities, neighborhood, floor area etc. and identified major factors impacting prices.
 - Used different data imputation methodologies for cleaning data, build different models using different predictive modeling techniques such as BART, GBM etc and compared them using R-sqr for final model selection.
 
-**Understanding demographics of ageing vs GDP growth rate across the world (R)**  
-<a href="https://github.com/amanbagla/Aman-Bagla/blob/master/Data%20Visualization.pdf" target="_blank">Project Link.</a>  
+**Understanding demographics of ageing vs GDP growth rate across the world (R)**    
 _Jan 2019-May 2019_  
+<a href="https://github.com/amanbagla/Aman-Bagla/blob/master/Data%20Visualization.pdf" target="_blank">_Project Link_</a>
 - Data visualization and wrangling packages like ggvis, shiny, ggplot, tidyverse, dplyr etc. used for making interactive world plots to understand the demographics of ageing and its relationship with GDP growth rate over last 5 decades.
 
 **Identifying features of an image using Neural Network and SVM techniques (R)**  
