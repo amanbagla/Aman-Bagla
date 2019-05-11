@@ -1,8 +1,11 @@
-## Welcome to GitHub Pages
+## EDUCATION
 
-You can use the [editor on GitHub](https://github.com/amanbagla/Study/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Purdue University, West Lafayette, Indiana, USA                                                                Graduation: May 2019
+Master of Science, Industrial Engineering 		    (GPA – 4.0/ 4.0)
 
-Whenever you commit to this repository, GitHub Pages will run [Jeyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Malaviya National Institute of Technology (MNIT), Jaipur, India                                 	        	   Graduation: May 2011
+Bachelor of Technology in Mechanical Engineering 	(GPA – 7.52/ 10)
+
 
 ### Markdown
 
