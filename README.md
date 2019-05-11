@@ -34,7 +34,7 @@ _Jan 2019-May 2019_
 - Used different data imputation methodologies for cleaning data, build different models using different predictive modeling techniques such as BART, GBM etc and compared them using R-sqr for final model selection.
 
 **Understanding demographics of ageing vs GDP growth rate across the world (R)**  
-<a href="https://github.com/amanbagla/Aman-Bagla/blob/master/Data%20Visualization.pdf" target="_blank">PDF.</a>
+<a href="https://github.com/amanbagla/Aman-Bagla/blob/master/Data%20Visualization.pdf" type="application/pdf">PDF.</a>
 _Jan 2019-May 2019_  
 - Data visualization and wrangling packages like ggvis, shiny, ggplot, tidyverse, dplyr etc. used for making interactive world plots to understand the demographics of ageing and its relationship with GDP growth rate over last 5 decades.
 
