@@ -1,9 +1,17 @@
 ## EDUCATION
 
-Purdue University, West Lafayette, Indiana, USA                                                                Graduation: May 2019
-Master of Science, Industrial Engineering 		    (GPA – 4.0/ 4.0)
+Master of Science, Industrial Engineering
 
-Malaviya National Institute of Technology (MNIT), Jaipur, India                                 	        	   Graduation: May 2011
+Graduation: May 2019
+
+(GPA – 4.0/ 4.0)
+
+Purdue University, West Lafayette, Indiana, USA 
+
+ 		    
+
+Malaviya National Institute of Technology (MNIT), Jaipur, India Graduation: May 2011
+
 Bachelor of Technology in Mechanical Engineering 	(GPA – 7.52/ 10)
 
 
