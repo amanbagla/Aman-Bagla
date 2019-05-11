@@ -3,12 +3,12 @@
 Master of Science, Industrial Engineering  
 Graduation: May 2019  
 GPA – 4.0/ 4.0  
-**Purdue University, West Lafayette, Indiana, USA** 
+Purdue University, West Lafayette, Indiana, USA 
    
 Bachelor of Technology in Mechanical Engineering  
 Graduation: May 2011  
 GPA – 7.52/ 10  
-**Malaviya National Institute of Technology (MNIT), Jaipur, India** 
+Malaviya National Institute of Technology (MNIT), Jaipur, India 
 
  	
 ## RELEVANT SKILLS
