@@ -68,7 +68,7 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 
 [Predictive Project](https://github.com/amanbagla/Aman-Bagla/blob/master/Data%20Visualization.pdf)
 
-[ppp](https://git.overleaf.com/5c9adde7e44cd62d3cc82919)
+[ppp](https://github.com/amanbagla/Stat/blob/master/README.md)
 ```markdown
 Syntax highlighted code block
 
