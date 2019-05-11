@@ -65,7 +65,7 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 
 <a href="End Term">Predicitve-Project</a>
 
-[Predictive Project](https://github.com/amanbagla/Aman-Bagla/blob/master/Baglaa_Endterm%20(2).pdf)
+[Predictive Project](https://github.com/amanbagla/Aman-Bagla/blob/master/Data%20Visualization.pdf)
 
 [ppp](https://git.overleaf.com/5c9adde7e44cd62d3cc82919)
 ```markdown
