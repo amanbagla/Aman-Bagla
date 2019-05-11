@@ -1,21 +1,31 @@
 ## EDUCATION
 
 Master of Science, Industrial Engineering
-
 Graduation: May 2019
+GPA – 4.0/ 4.0
+**Purdue University, West Lafayette, Indiana, USA** 
+   
+Bachelor of Technology in Mechanical Engineering
+Graduation: May 2011
+GPA – 7.52/ 10
+**Malaviya National Institute of Technology (MNIT), Jaipur, India** 
 
-(GPA – 4.0/ 4.0)
+ 	
+## RELEVANT SKILLS
 
-Purdue University, West Lafayette, Indiana, USA 
+**Related Coursework (Masters):** Regression Analysis, Introduction to Statistical Computing, Predictive Modeling, Machine Learning, Industrial Application of Statistics and Multidisciplinary Optimization.
 
- 		    
+**Regression & Classification Problem Methodologies:** Ridge/LASSO, Logistic Regression, Linear/ Quadratic Discrimination Analysis, ROC Curve, K-Nearest Neighbors, Support Vector Machines, Expectation Maximization, K-mean Clustering, GAMs, Neural Networks, Principal Component Analysis (PCA), Anomaly Detection and Tree bases models – Decision Tree, Random Forest, Gradient Boosting, Multivariate Adaptive Regression Spline (MARS), Bayesian Additive Regression Trees.
 
-Malaviya National Institute of Technology (MNIT), Jaipur, India Graduation: May 2011
+**Model Selection & Validation Strategies:** Rsqr, Rsqr-adj, RMSE, Mallow’s Cp, AIC, BIC, Forward/Backward Selection, Shrinkage methods, K-fold Cross-validation, LOOCV, Bootstrapping, Bagging. 
 
-Bachelor of Technology in Mechanical Engineering 	(GPA – 7.52/ 10)
+**Programming Languages:** R & SAS.
 
+## RELEVANT PROJECTS
 
-### Markdown
+**Identifying major factors impacting population growth rate across various geographic locations**
+- Population growth trends of 173 countries analyzed over two decades in relation with different geographic, demographic, economic and sociological factors such as education, GDP, migrant stock, religion, demographic etc. to develop a region/country specific customized strategy to control population growth rate.
+- Different Predictive models build using Random Forest, Boosting, GAMs, MARS, BART and SVM techniques, tuned respective parameters using K-fold cross-validation and compared RMSE values for best model selection.
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 <a href="Project.html">Project</a>
