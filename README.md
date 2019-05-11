@@ -29,7 +29,7 @@ _Jan 2019-May 2019_
 - Different Predictive models build using Random Forest, Boosting, GAMs, MARS, BART and SVM techniques, tuned respective parameters using K-fold cross-validation and compared RMSE values for best model selection.
 
 **Building model to predict house sale price (R)**  
-_Jan 2019-May 2019_  
+_Jan 2019-May 2019_
 - Build a model to predict sale price of house for Ames city and Iowa using 80 qualitative and quantitative predictors such as house location, facilities, neighborhood, floor area etc. and identified major factors impacting prices.
 - Used different data imputation methodologies for cleaning data, build different models using different predictive modeling techniques such as BART, GBM etc and compared them using R-sqr for final model selection.
 
