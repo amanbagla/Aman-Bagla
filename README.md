@@ -24,6 +24,7 @@ Malaviya National Institute of Technology (MNIT), Jaipur, India
 ## RELEVANT PROJECTS
 
 **Identifying major factors impacting population growth rate across various geographic locations**  
+<a href="https://github.com/amanbagla/Predictive-Project/blob/master/Predictive%20Project.pdf" target="_blank">_Project Link_</a>
 _Jan 2019-May 2019_  
 - Population growth trends of 173 countries analyzed over two decades in relation with different geographic, demographic, economic and sociological factors such as education, GDP, migrant stock, religion, demographic etc. to develop a region/country specific customized strategy to control population growth rate.
 - Different Predictive models build using Random Forest, Boosting, GAMs, MARS, BART and SVM techniques, tuned respective parameters using K-fold cross-validation and compared RMSE values for best model selection.
