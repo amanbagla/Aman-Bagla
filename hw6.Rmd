@@ -1,0 +1,129 @@
+---
+title: "Bagla_lab6_0227"
+author: "Aman Bagla"
+date: "26 February 2019"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Question 1
+
+```{r, warning=FALSE}
+library(rpart)
+library(rpart.plot)
+library(caret)
+library(e1071)
+setwd("C:/Users/amanb/Desktop/Predictive Modeling")
+TCcount <-read.csv("TCcount.csv")
+set.seed(2)
+tain.row <- sample(1:nrow(TCcount), 0.8*nrow(TCcount))
+tc.train <- TCcount[tain.row,]
+tc.test <- TCcount[-tain.row,]
+
+model1 <- rpart(TS~SST+ENSO+NAO, data=tc.train,method="class")
+summary(model1)
+rpart.plot(model1, main="Rpart Tree")
+plotcp(model1)
+summary(model1)
+
+```
+
+Best model chosen here is as per minimum relative error between Cp & x-error.
+
+Checking model performance on In-sample and Out-of-sample data using %age of correct predicitons.
+```{r}
+model1.pred.IS <- predict(model1,type="class")
+train.res.mat <- table(model1.pred.IS,tc.train$TS)
+correct.pred.train.model1 <- sum(train.res.mat[row(train.res.mat) == col(train.res.mat)])
+per.accuracy.train.model1 <- correct.pred.train.model1*100/length(model1.pred.IS)
+per.accuracy.train.model1
+
+model1.pred.OS <- predict(model1,newdata = tc.test,type="class")
+test.res.mat <- table(model1.pred.OS,tc.test$TS)
+correct.pred.test.model1 <- sum(test.res.mat[row(test.res.mat) == col(test.res.mat)])
+per.accuracy.test.model1 <- correct.pred.test.model1*100/length(model1.pred.OS)
+per.accuracy.test.model1
+
+```
+
+Prediction accuracy of model1 on in-sample and out-of-sample are `r per.accuracy.train.model1` % & `r per.accuracy.test.model1` % respectively.
+
+However in this case, instead of using %age of correct prediction, comparing using MSE makes more sense.
+
+```{r}
+SSE.train.model1 <- sum((tc.train$TS - as.numeric(model1.pred.IS)-1)^2)/nrow(tc.train)
+SSE.train.model1
+SSE.test.model1 <- sum((tc.test$TS - as.numeric(model1.pred.OS)-1)^2)/nrow(tc.test)
+SSE.test.model1
+```
+
+So, MSE of model1 on in-sample and out-of-sample are `SSE.train.model1` & `SSE.test.model1` respectively.
+
+## Question 2
+
+Percentage of correct prediction for each cross-fold is shown in below graph.
+
+```{r}
+TCcount$perc <- as.factor(ifelse(TCcount$TS <= quantile(TCcount$TS, probs=0.8), 0, 1))
+tcnew.train <- TCcount[tain.row,]
+tcnew.test <- TCcount[-tain.row,]
+
+set.seed(1)
+train_control <- trainControl(method = "cv", number = 10)
+model2 <- train(perc~SST+ENSO+NAO, data=tcnew.train, trControl = train_control, method="rpart")
+
+plot(model2$resample$Accuracy)
+```
+
+To compare model1 & model2, model2's accuracy was checked on in-sample and out-of-sample data and results are as shown below.
+
+```{r}
+model2.pred.IS <- predict(model2,type="raw")
+table(model2.pred.IS,tcnew.train$perc)
+model2.pred.OS <- predict(model2,newdata = tcnew.test,type="raw")
+table(model2.pred.OS,tcnew.test$perc)
+per.accuracy.train.model2 <- sum(table(model2.pred.IS,tcnew.train$perc)[c(1,4)])*100/sum(table(model2.pred.IS,tcnew.train$perc))
+per.accuracy.train.model2
+per.accuracy.test.model2 <- sum(table(model2.pred.OS,tcnew.test$perc)[c(1,4)])*100/sum(table(model2.pred.OS,tcnew.test$perc))
+per.accuracy.test.model2
+```
+
+Here, we can see that accuracy of model2 is much better than model1 as it has now become a classifiation type of problem rather actual quantative value prediction hence inherent predicion accuracy is higer.
+
+
+## Question 3
+
+```{r, warning=FALSE}
+set.seed(1)
+model3 <- train(TS~SST+ENSO+NAO, data=tcnew.train, trControl = train_control, method="rpart1SE")
+model3.pred.IS <- predict(model3,type="raw")
+model3.pred.OS <- predict(model3, newdata = tcnew.test, type="raw")
+SSE.train.rpart <- sum((tcnew.train$TS - as.numeric(model3.pred.IS)-1)^2)/nrow(tcnew.train)
+SSE.train.rpart
+SSE.test.rpart <- sum((tcnew.test$TS - as.numeric(model3.pred.OS)-1)^2)/nrow(tcnew.train)
+SSE.test.rpart
+
+set.seed(1)
+model4 <- train(TS~SST+ENSO+NAO, data=tcnew.train, trControl = train_control, method="cforest")
+model4.pred.IS <- predict(model4,type="raw")
+model4.pred.OS <- predict(model4, newdata = tcnew.test, type="raw")
+SSE.train.randforst <- sum((tcnew.train$TS - as.numeric(model4.pred.IS)-1)^2)/nrow(tcnew.train)
+SSE.train.randforst
+SSE.test.randforst <- sum((tcnew.test$TS - as.numeric(model4.pred.OS)-1)^2)/nrow(tcnew.train)
+SSE.test.randforst
+```
+
+Looking at the MSE values of both the model i.e. model3 (Using rpart with cross validation) & model4 (using random Forest with cross validation) on both in-sample and out-of-sample data, we can see that the MSE values are better while using random forest methodology, hence Random Forest is better for this case.
+
+```{r}
+comparison <- matrix(c(SSE.train.rpart,SSE.test.rpart,SSE.train.randforst,SSE.test.randforst), nrow = 2)
+rownames(comparison) <- c("MSE_Train","MSE_Test")
+colnames(comparison) <- c("Rpart", "Random Forest")
+comparison
+```
+
